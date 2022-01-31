@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <link rel="stylesheet" href="style.css">
+ </head>
+ <body>
+  <header>
+ <img src="1.png" alt="" class="logo" width="323" height="91">
+ <span id="tel">+7 4212 250893</span>
+  <nav>
+    <a   href="index.html">Главная</a>
+    <a  class="active" href="#contact">Каталог</a>
+    <a href="shop.html">Магазины и контакты</a>
+     <a href="dostavka.html">Доставка</a>
+     <a href="sign in.html">Регистрация</a>
+  </nav>
+</header>
+<main>
+  <div class="container4">
+      
+      <div>
+          <label id="rocket1">
+              ракета1
+          </label>
+          <img src="ракета1.jpg"></img>
+          <button onclick="additem();">
+              Добавить в корзину
+          </button>
+      </div>
+      <div>
+          <label id="rocket2">
+              ракета2
+          </label>
+          <img src="ракета2.jpg"></img>
+          <button onclick="additem1();">
+            Добавить в корзину
+          </button>
+      </div>
+      <div id="bucket">
+          
+      </div>
+      <button onclick="clear_bucket();">
+          очистить корзину
+      </button>
+      </div>
+      <script>
+          var Shope= [];
+          function additem(){
+              const item= document.getElementById("rocket1").innerHTML; //получает значение хештега в ковычках(рокет1) по айди
+              console.log(item); //выводит в кносоль итем
+              Shope.push(item); //берем переменную массива шоп и добавляем в нее добавялем итем
+              console.log(Shope); //выводим в консоль сам массив
+              document.getElementById("bucket").innerHTML="Ваша корзина: "+Shope; //хештегу бакет присваиваем все, что написали
+          }
+          var Shope= [];
+          function additem1(){
+              const item= document.getElementById("rocket2").innerHTML;
+              console.log(item);
+              Shope.push(item);
+              console.log(Shope);
+              document.getElementById("bucket").innerHTML="Ваша корзина: "+Shope;
+          }
+          function clear_bucket(){
+              Shope= [];
+              document.getElementById("bucket").innerHTML="Ваша корзина: "+Shope;
+          }
+      </script>
+</main>
